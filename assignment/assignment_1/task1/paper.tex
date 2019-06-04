@@ -1,0 +1,233 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{diazessay} % Font size (can be 10pt, 11pt or 12pt)
+\usepackage{sectsty}
+\usepackage[numbers]{natbib}
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\sectionfont{\centering}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{Task 1: Linear Regression} \\ {\Large\itshape Machine Learning Assignment}} % Title and subtitle
+
+\author{\textbf{Matthew Doherty} \\ \textit{Rhodes University} \\ \textit{Lecturer: Dane Brown}} % Author and institution
+
+\date{\today} % Date, use \date{} for no date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title section
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand*{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+%\begin{abstract}
+%    Abstract
+%\end{abstract}
+
+\hspace*{3.6mm}\textit{Keywords:} Machine Learning % Keywords
+
+\vspace{30pt} % Vertical whitespace between the abstract and first section
+
+%----------------------------------------------------------------------------------------
+%	ESSAY BODY
+%----------------------------------------------------------------------------------------
+
+% "*" means no numbering -> \section*{Introduction}
+
+\section*{Part A}
+
+\begin{lstlisting}
+Please see 3_4_Linear_Regression.py.
+\end{lstlisting}
+
+%\cite{virtualbox}
+
+%------------------------------------------------
+
+\section*{Part B}
+
+Generalization error provides a measure of how accurately an algorithm is able to predict output for unseen values, thus generlisation error is minimised when a model does not overfit the data. 
+A means of determining generalization error for the linear regression model is given by a loss function such as Mean Square Error (MSE):
+
+
+\begin{lstlisting}
+R_Squared = 0.760
+MSE = 14.996
+\end{lstlisting}
+
+Whereas the generalization error for ridge regression model is given by:
+
+\begin{lstlisting}
+R_Squared = 0.763
+MSE = 14.775
+\end{lstlisting}
+
+R-squared is a measure of how well outcomes are replicated by the model, or how much of the variance of the dependent variable is explained by the model. Since R-squared for the Ridge Regression is greater than R-squared for Linear Regression, we therefore can conclude that the Ridge regression model better generalizes to unseen data points than the Linear Regression model in this example. A good model should be able to minimize MSE which demonstrates the quality of the estimator. This further confirms the model's efficacy.
+
+
+%------------------------------------------------
+\section*{Part C}
+
+The predicted plot for the Ridge regression model more closely fits a line to the ground truth data points, that is minimizes mean squared error. Therefore the Linear model overfits its model when training whereas the Ridge regression model introduces a regularization term to the model which allows it to better predict new data points and avoid overfitting the testing set by simplifying the model. Ridge Regression Regression tries to strike a balance between overfitting and underfitting as is expressed visually in the plots.
+
+%------------------------------------------------
+\section*{Part D}
+
+A measure of performance in Linear Regression is Mean Squared Error (MSE). It measures the average of the squares of errors. The closer the value is to 0 the better the quality of the estimator has predicting values. 
+
+For the Linear Regression Model:
+\begin{lstlisting}
+R_Squared = 0.763
+MSE = 14.996
+\end{lstlisting}
+
+For the Ridge Regression Model:
+
+\begin{lstlisting}
+R_Squared = 0.763
+MSE = 14.775
+\end{lstlisting}
+
+Since ridge regression provides a lower MSE value we can conclude that it is a better quality loss function to model the given data at this test sample size. Hence there is an improvement in performance.
+
+%------------------------------------------------
+\section*{Part E}
+
+\textit{Linear Regression }
+\begin{lstlisting}
+R-squared = 0.760
+MSE = 14.996
+\end{lstlisting}
+
+
+\textit{Ridge Regression }
+\begin{lstlisting}
+R-squared = 0.763
+MSE = 14.775
+\end{lstlisting}
+
+\textit{Lasso Regression }
+\begin{lstlisting}
+R-squared = 0.701
+MSE = 18.645
+\end{lstlisting}
+
+Lasso Regression has a smaller R-squared value and a larger MSE value than both of the other models. The generalizability of the model to new data is therefore worse due to the lower R-squared value. In addition the performance of the model in this context is worse due to producing a large mean squared error, which speaks to the inability of the model to account for the variance of the data when compared to the other two models in this context. 
+
+%------------------------------------------------
+\section*{Part F}
+
+The following are the results from a test size of 0.5. 
+
+\textit{Linear Regression }
+\begin{lstlisting}
+R-squared = 0.690
+MSE = 25.175
+\end{lstlisting}
+
+
+\textit{Ridge Regression }
+\begin{lstlisting}
+R-squared = 0.684
+MSE = 25.632
+\end{lstlisting}
+
+\textit{Lasso Regression }
+\begin{lstlisting}
+R-squared = 0.690
+MSE = 25.175
+\end{lstlisting}
+
+
+The following are the results from a test size of 0.9. 
+
+\textit{Linear Regression }
+\begin{lstlisting}
+R-squared = 0.676
+MSE = 28.430
+\end{lstlisting}
+
+
+\textit{Ridge Regression }
+\begin{lstlisting}
+R-squared = 0.671
+MSE = 28.430
+\end{lstlisting}
+
+\textit{Lasso Regression }
+\begin{lstlisting}
+R-squared = 0.676
+MSE = 28.014
+\end{lstlisting}
+
+These sets of results ranging from test sizes of 0.1 (previous question), 0.5 and 0.9 show a changing relationship given different sized testing data. In terms of the two loss functions ridge regression has shown itself to produce more a generalizable model when given a small test set. Whereas linear regression is better when given a larger test set to train on in the context of this dataset. Therefore a model is only useful given a context where it excels.
+
+%------------------------------------------------
+\clearpage
+\section*{Task 2}
+
+\begin{lstlisting}
+Please see file 5_Logistic-Regression_Classifier.py
+\end{lstlisting}
+
+%------------------------------------------------
+
+%\section*{Conclusion}
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\clearpage
+%\bibliographystyle{unsrt}
+%\bibliographystyle{unsrtnat} % Cater for natbib
+\bibliographystyle{abbrvnat} % Cater for natbib
+
+
+%\bibliography{paper.bib}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
